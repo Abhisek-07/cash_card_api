@@ -32,15 +32,15 @@ class SecurityConfig {
         User.UserBuilder users = User.builder();
         UserDetails sarah = users
                 .username("sarah1")
-                .password(passwordEncoder.encode("abc123"))
+                .password(passwordEncoder.encode("abc1234"))
                 .roles("CARD-OWNER") // new role
                 .build();
-        UserDetails hankOwnsNoCards = users
+        UserDetails kumar = users
                 .username("kumar2")
                 .password(passwordEncoder.encode("abc123"))
                 .roles("CARD-OWNER") // new role
                 .build();
-        return new InMemoryUserDetailsManager(sarah, hankOwnsNoCards);
+        return new InMemoryUserDetailsManager(sarah, kumar);
     }
 
     @Bean()
